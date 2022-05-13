@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import Game.Main;
+
 public class testpage2 extends JFrame {
 
 	private ImageIcon nextButtonImage=new ImageIcon(testpage1.class.getResource("/images/nextButton.png"));

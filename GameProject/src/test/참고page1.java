@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Game.Main;
+
 public class Âü°ípage1 extends JFrame {
 
 	public JFrame frame;

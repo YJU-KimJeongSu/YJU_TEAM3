@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-import test.Main;
+//import test.Main;
 
 
 class Start extends JFrame{
@@ -90,7 +90,6 @@ class Start extends JFrame{
     }
 
 	class MyPanel extends JPanel{
-     
         public void paintComponent(Graphics g){
             super.paintComponent(g);
             g.drawImage(introBackground, 0, 0, null);
