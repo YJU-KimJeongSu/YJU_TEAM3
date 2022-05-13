@@ -1,9 +1,10 @@
-package Game;
+package test;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -15,10 +16,10 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.CardLayout;
 
-public class test {
+public class testpage1 {
 
 	private JFrame frame;
-	private ImageIcon nextButtonImage=new ImageIcon(test.class.getResource("/images/nextButton.png"));
+	private ImageIcon nextButtonImage=new ImageIcon(testpage1.class.getResource("/images/nextButton.png"));
 	private ImageIcon nextButtonEnteredImage= new ImageIcon(Main.class.getResource("../images/nextButtonEntered.png"));
 	
 	/**
@@ -28,7 +29,7 @@ public class test {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					test window = new test();
+					testpage1 window = new testpage1();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +41,7 @@ public class test {
 	/**
 	 * Create the application.
 	 */
-	public test() {
+	public testpage1() {
 		initialize();
 	}
 

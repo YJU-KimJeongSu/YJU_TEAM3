@@ -1,19 +1,19 @@
-package Game;
+package test;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Page1 extends JFrame {
-	private Page2 panel;
-	private JFrame frame;
+public class 참고page1 extends JFrame {
+
+	public JFrame frame;
 	
 	// 윈도우 빌더
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Page1 window = new Page1();
+					참고page1 window = new 참고page1();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -21,7 +21,7 @@ public class Page1 extends JFrame {
 			}
 		});
 	}
-	
+
 	// 이미지 모아두기
 	private ImageIcon startButtonEnteredImage= new ImageIcon(Main.class.getResource("../images/startButtonEntered.png"));
 	private ImageIcon startButtonImage= new ImageIcon(Main.class.getResource("../images/startButtonBasic.png"));
@@ -34,11 +34,29 @@ public class Page1 extends JFrame {
 
 	
 	// 생성자
-	public Page1() {
+	public 참고page1() {
+		/*
+		 * super("2 Weeks");
+		JPanel panel1= new JPanel();
+		JButton startBtn = new JButton(startButtonImage);
+		JButton quitBtn = new JButton(quitButtonImage);
+		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+		panel1.add(startBtn);
+		panel1.add(quitBtn);
+		add(panel1);
+		
+		setVisible(true);
+		startBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Page2();
+				setVisible(false);
+			}
+		});*/
+		
 		gameStart();
 	}
 	
-
 	private void gameStart() {
 		frame = new JFrame();
 		frame.setBounds(0, 0, Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
@@ -48,16 +66,18 @@ public class Page1 extends JFrame {
 		frame.setLocationRelativeTo(null);
 		frame.setTitle("2 Weeks");
 		
+		
 		JPanel mainPanelPage1 = new JPanel() {
-//			public void paint(Graphics g) { // 배경화면 설정 함수
-//				g.drawImage(introBackground, 0, 0, null);//background를 그려줌
-//				setOpaque(true);
-//			}
+			 public void paint(Graphics g) { // 배경화면 설정 함수
+				g.drawImage(introBackground, 0, 0, null);//background를 그려줌
+				setOpaque(true);
+			} 
 		};
+		frame.setVisible(true);
 		JPanel titlePanelPage1 = new JPanel();
+		JLabel title = new JLabel(titleImage);
 		JPanel selectPanelPage1 = new JPanel();
 		
-		JLabel title = new JLabel(titleImage);
 		JButton startButton = new JButton(startButtonImage);
 		JButton quitButton = new JButton(quitButtonImage);
 		
@@ -66,21 +86,20 @@ public class Page1 extends JFrame {
 		mainPanelPage1.setBounds(0, 0, Main.PANEL_WIDTH, Main.PANEL_HEIGHT);
 		mainPanelPage1.setBackground(new Color(0,0,0)); 
 		frame.getContentPane().add(mainPanelPage1);
-	
-		
-		//페이지1 제목이미지 들어갈 부분
-		titlePanelPage1.setBounds(0, 0, Main.PANEL_WIDTH, 513);
-		mainPanelPage1.add(titlePanelPage1);
-	
-		titlePanelPage1.setOpaque(true); // 배경 투명하게
-		titlePanelPage1.setBackground(new Color(0,0,0,0)); // 배경 투명하게
-		titlePanelPage1.add(title);
 		
 		
+//		//페이지1 제목이미지 들어갈 부분
+//		titlePanelPage1.setBounds(0, 0, Main.PANEL_WIDTH, 513);
+//		mainPanelPage1.add(titlePanelPage1);
+//		titlePanelPage1.setOpaque(false); // 배경 투명하게
+//		titlePanelPage1.setBackground(new Color(0,0,0,0)); // 배경 투명하게
+//		titlePanelPage1.add(title);
+//		
+//		
 		//페이지1 시작 종료 선택할 부분
 		selectPanelPage1.setBounds(0, 200,  Main.PANEL_WIDTH, 250);
 		selectPanelPage1.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20)); 
-		selectPanelPage1.setOpaque(true); // 배경 투명하게
+		//selectPanelPage1.setOpaque(false); // 배경 투명하게
 		selectPanelPage1.setBackground(new Color(0,0,0)); // 배경 투명하게
 		mainPanelPage1.add(selectPanelPage1, BorderLayout.SOUTH); //밑 레이아웃에 위치
 		
@@ -89,8 +108,10 @@ public class Page1 extends JFrame {
 		startButton.setBorderPainted(false);
 		startButton.setContentAreaFilled(false);
 		startButton.setFocusPainted(false);
+		startButton.setVisible(true);
+		mainPanelPage1.add(startButton);
 		
-		selectPanelPage1.add(startButton);
+		startButton.setIcon(startButtonImage);
 		startButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -107,12 +128,11 @@ public class Page1 extends JFrame {
 				startButton.setVisible(false);
 				quitButton.setVisible(false);
 				
-				mainPanelPage1.setVisible(false); 
-				
-				panel = new Page2(); // 다음 페이지로 이동
-				frame.getContentPane().add(panel);
-		}
 			
+				testpage2 panel = new testpage2(); // 다음 페이지로 이동
+				System.out.println(panel);
+				frame.getContentPane().add(panel);
+			}
 		});
 		
 		//종료버튼
@@ -121,7 +141,10 @@ public class Page1 extends JFrame {
 		quitButton.setFocusPainted(false); // 선택됐을 때 테두리X
 		quitButton.setOpaque(false);
 		
-		selectPanelPage1.add(quitButton);
+		
+		mainPanelPage1.add(quitButton);
+		quitButton.setVisible(true);
+		quitButton.setIcon(quitButtonImage);
 		quitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -138,9 +161,7 @@ public class Page1 extends JFrame {
 				System.exit(0);
 			}
 		});
-		
-		
-		frame.setVisible(true);
+				
 	}
 }
 

@@ -1,25 +1,44 @@
-package Game;
+package test;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Page2 extends JPanel{
+public class testpage2 extends JFrame {
 
-	private ImageIcon nextButtonImage=new ImageIcon(test.class.getResource("/images/nextButton.png"));
+	private ImageIcon nextButtonImage=new ImageIcon(testpage1.class.getResource("/images/nextButton.png"));
 	private ImageIcon nextButtonEnteredImage= new ImageIcon(Main.class.getResource("../images/nextButtonEntered.png"));
 	
-	public Page2() {
+	public testpage2() {
+		/*
+		super("2 Weeks");
+		JPanel panel1= new JPanel();
+		JButton nextButton = new JButton(nextButtonImage);
+		setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+		panel1.add(nextButton);
+		add(panel1);
+		
+		setVisible(true);
+		nextButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Page2();
+				setVisible(false);
+			}
+		});
+		*/
 		init();
 	}
 	
-	public void init() {
+	public JPanel init() {
 		JPanel mainPanelPage2 = new JPanel();
 		JPanel topPanelPage2 = new JPanel();
 		JPanel textPanelPage2 = new JPanel();		
@@ -28,7 +47,6 @@ public class Page2 extends JPanel{
 		JButton nextButton = new JButton(nextButtonImage);
 		
 		// page2 메인 패널
-		add(mainPanelPage2);
 		mainPanelPage2.setBounds(0, 0,  Main.PANEL_WIDTH, Main.PANEL_HEIGHT);
 		mainPanelPage2.setBackground(Color.black);
 		mainPanelPage2.add(textPanelPage2);
@@ -72,6 +90,8 @@ public class Page2 extends JPanel{
 //		}
 			
 		});
+		return mainPanelPage2;
+		
 	}
 	
 }

@@ -1,4 +1,4 @@
-package Game;
+package test;
 
 public class Main {
 	
@@ -9,7 +9,8 @@ public class Main {
 	public static final int PANEL_HEIGHT = 683;
 	
 	public static void main(String[] args) {	
-		new Page1();
+		System.out.println("Ds");
+		//new Page1();
 	}
 
 }
