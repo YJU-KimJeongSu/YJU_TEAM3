@@ -74,10 +74,10 @@ public class Page1 extends JPanel {
             
             // 시작 버튼 누르면 next 클래스에서 버튼 가져오기
             // 사용법 new 클래스명(). 함수명();
-            MainJPanel.mainPanel.add(new Page2().next());
-            MainJPanel.mainPanel.add(new Page2().text());
-            // 다음 페이지 배경 화면 변경 Page1.mainPanel.pageBackground = 배경변수명;
-            MainJPanel.mainPanel.pageBackground = aisleBackground;
+            Game.mainPanel.add(new Page2().next());
+            Game.mainPanel.add(new Page2().text());
+            // 다음 페이지 배경 화면 변경 Game.mainPanel.pageBackground = 배경변수명;
+            Game.mainPanel.pageBackground = aisleBackground;
          }
       });
         return startBtn;

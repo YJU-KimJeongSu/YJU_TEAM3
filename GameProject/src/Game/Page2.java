@@ -40,11 +40,12 @@ public class Page2 extends JPanel{
 	       return nextBtn;
 	   }
 	
+	 // 텍스트 들어갈 JLabel 생성
 	 public JLabel text() {
 		 // 폰트 속성 지정
 		 Font myFont1 = new Font("Serif", Font.BOLD, 18);
 		 
-		 // html 처럼 사용해서 줄바꿈, 중앙정렬 가능
+		 // html처럼 사용해서 줄바꿈, 중앙정렬 가능
 		 String test = "<html><body style='text-align:center;'>글자 잘나오는 지 테스트 중"
 		 		+ "<br> html 구문 써야 줄바꿈 되는군!"
 		 		+ "<br> JAVA Team3 game project </body></html>";
