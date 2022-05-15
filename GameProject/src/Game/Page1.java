@@ -19,7 +19,9 @@ public class Page1 extends JPanel {
    Page1(){
 	   page1Btn();
    }
+   
    public void page1Btn() {
+	   //다음장면에 쓸 page2 인스턴스 생성
 	   Page2 page2 = new Page2();
 	   
 	   startBtn.setBounds(200,500,400,100);
@@ -48,7 +50,8 @@ public class Page1 extends JPanel {
            startBtn.setVisible(false);
            quitBtn.setVisible(false);
            
-           // 시작 버튼 누르면 next 클래스에서 버튼 가져오기
+           // 시작 버튼 누르면 page2 클래스에서 버튼, 텍스트박스 가져오기
+           // Game.mainPanel.add(page2인스턴스.JButton이나 JLabel의 변수명)
            Game.mainPanel.add(page2.textBox);
            Game.mainPanel.add(page2.nextBtn);
            // 다음 페이지 배경 화면 변경 Game.mainPanel.pageBackground = 배경변수명;
@@ -80,19 +83,5 @@ public class Page1 extends JPanel {
 	         }
 	      });
    }
-   
-//   public JButton quit() {
-//	      // 종료하기 버튼
-//	    
-//	        return quitBtn;
-//	   }
-//   
-//   public JButton start() {
-//        // 시작하기 버튼
-//       
-//        return startBtn;
-//       
-//   }
-   
-   
+    
 }

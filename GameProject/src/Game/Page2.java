@@ -18,9 +18,9 @@ public class Page2 extends JPanel{
 		 page2Text();
 	 }
 	 
+	//다음 버튼
 	 public void page2Btn() {
-		 //다음 버튼
-		 //nextBtn.setVisible(true);
+		 nextBtn.setVisible(true);
 		 nextBtn.setBounds(1000,500,200,100);
 	     nextBtn.setBorderPainted(false); 
 	     nextBtn.setContentAreaFilled(false); 
@@ -45,6 +45,8 @@ public class Page2 extends JPanel{
 	         }
 	      });
 	 }
+	 
+	 // 텍스트박스
 	 public void page2Text() {
 		// 폰트 속성 추가 변수
 		 Font myFont1 = new Font("Serif", Font.BOLD, 18);

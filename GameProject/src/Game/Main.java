@@ -18,7 +18,9 @@ public class Main {
 		
 		// 메인으로 돌아갈 프레임의 생성자
 		Game() {
+			//다음장면에 쓸 page1 인스턴스 생성
 			Page1 page1 = new Page1();
+			
 			// 프레임 설정   
 			setTitle("2 Weeks");
 			setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
@@ -31,7 +33,7 @@ public class Main {
 	        // 메인패널
 	        add(mainPanel);
 	        mainPanel.setLayout(null);  
-	        // 메인패널에 시작, 종료 버튼 추가
+	        // 메인패널에 시작, 종료 버튼 추가(page1인스턴스.JButton변수명) 
 	        mainPanel.add(page1.startBtn); 
 	        mainPanel.add(page1.quitBtn); 
 	   }
