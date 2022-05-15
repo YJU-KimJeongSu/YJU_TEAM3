@@ -18,11 +18,13 @@ public class Main {
 		
 		// 메인으로 돌아갈 프레임의 생성자
 		Game() {
+			Page1 page1 = new Page1();
 			// 프레임 설정   
 			setTitle("2 Weeks");
 			setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
 	        setResizable(false);
 	        setLocationRelativeTo(null);
+	        setBackground(new Color(0, 0, 0));
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setVisible(true);
 	        
@@ -30,9 +32,8 @@ public class Main {
 	        add(mainPanel);
 	        mainPanel.setLayout(null);  
 	        // 메인패널에 시작, 종료 버튼 추가
-	        // 사용법 new 클래스명().함수명();
-	        mainPanel.add(new Page1().start()); 
-	        mainPanel.add(new Page1().quit()); 
+	        mainPanel.add(page1.startBtn); 
+	        mainPanel.add(page1.quitBtn); 
 	   }
 	 }
 		class MyPanel extends JPanel{

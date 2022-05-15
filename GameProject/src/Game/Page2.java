@@ -12,9 +12,15 @@ public class Page2 extends JPanel{
 	 JButton nextBtn = new JButton(nextButtonImage);
 	 JLabel textBox = new JLabel();
 	 
-	 public JButton next() {
-	     //다음 버튼
-		 nextBtn.setVisible(true);
+	 
+	 Page2(){
+		 page2Btn();
+		 page2Text();
+	 }
+	 
+	 public void page2Btn() {
+		 //다음 버튼
+		 //nextBtn.setVisible(true);
 		 nextBtn.setBounds(1000,500,200,100);
 	     nextBtn.setBorderPainted(false); 
 	     nextBtn.setContentAreaFilled(false); 
@@ -34,15 +40,13 @@ public class Page2 extends JPanel{
 	         @Override
 	         public void mousePressed(MouseEvent e) {
 	        	nextBtn.setVisible(false);
+	        	textBox.setVisible(false);
 	           /* 다음 화면 전환 추가 예정 */
 	         }
 	      });
-	       return nextBtn;
-	   }
-	
-	 // 텍스트 들어갈 JLabel 생성
-	 public JLabel text() {
-		 // 폰트 속성 지정
+	 }
+	 public void page2Text() {
+		// 폰트 속성 추가 변수
 		 Font myFont1 = new Font("Serif", Font.BOLD, 18);
 		 
 		 // html처럼 사용해서 줄바꿈, 중앙정렬 가능
@@ -54,11 +58,11 @@ public class Page2 extends JPanel{
 		 textBox.setBounds(300,100,700,500);
 		 textBox.setIcon(textBoxImage); // 텍스트 박스의 이미지
 		 textBox.setText(test); // 텍스트 박스에 들어갈 내용
-		 textBox.setFont(myFont1);
+		 textBox.setFont(myFont1); // 텍스트 폰트 변경
+		 
 		 // 텍스트 위치 조정
 		 textBox.setHorizontalTextPosition(JLabel.CENTER);
 		 textBox.setVerticalTextPosition(JLabel.CENTER);
-		 
-		 return textBox;
 	 }
+	 
 }
